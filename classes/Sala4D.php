@@ -6,8 +6,7 @@
     protected $acqua;
 
     public function __construct($_numero, $_capienza, $_vibrazione, $_fumo, $_acqua) {
-      $this->id = $_numero;
-      $this->capienza = $_capienza;
+      parent::__construct($_numero, $_capienza);
       $this->vibrazione = $_vibrazione;
       $this->fumo = $_fumo;
       $this->acqua = $_acqua;
