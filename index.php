@@ -41,6 +41,8 @@
 
 
 
+  // Milestone 1
+
   foreach ($saleArr as $sala) {
     echo "Sala {$sala->getinfo()[0]} <br> Capienza {$sala->getinfo()[1]} posti <br>";
     if($sala->getinfo()[2]) {
@@ -55,6 +57,12 @@
     }
     echo "<br>";
   }
+
+  // Milestone 2
+  foreach ($saleArr as $capienza) {
+    $totCapienza += $capienza->getinfo()[1];
+  }
+  echo "La capienza totale del cinema è di ".$totCapienza." posti.";
 
   
 
