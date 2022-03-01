@@ -59,6 +59,7 @@
   }
 
   // Milestone 2
+  $totCapienza = 0;
   foreach ($saleArr as $capienza) {
     $totCapienza += $capienza->getInfo()[1];
   }
@@ -69,8 +70,12 @@
   for ($i=0; $i < count($proiezioni); $i++) { 
     $proiezioniTot = $i + 1;
   }
-  echo "{$filmArr[0]->getTitolo()} verrà proiettato il giorno {$spettacoliArr[0]->getData()} per {$proiezioniTot} volte.";
+  echo "{$filmArr[0]->getTitolo()} verrà proiettato il giorno {$spettacoliArr[0]->getData()} per {$proiezioniTot} volte.<br><br>";
   
+  // Milestone 4
+  // $fineUltimoSpettacolo= strtotime('{$proiezioni[2]} + 5 minute');
+  // echo date($proiezioni[2], $fineUltimoSpettacolo);
+  // echo date($proiezioni[2]);
 
   echo "<pre>";
   // var_dump($filmArr);
