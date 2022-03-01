@@ -74,7 +74,7 @@
   
   // Milestone 4
   $ultimoSpettacolo = strtotime($proiezioni[2]);
-  $fineUltimoSpettacolo = date("H:i", strtotime('+{$filmArr[1]->getDurata()} minutes', $ultimoSpettacolo));
+  $fineUltimoSpettacolo = date("H:i", strtotime("+{$filmArr[1]->getDurata()} minutes", $ultimoSpettacolo));
   echo "L'ultimo spettacolo di {$filmArr[1]->getTitolo()} ({$proiezioni[2]} ) finirà alle {$fineUltimoSpettacolo}<br><br>";
 
   echo "<pre>";
