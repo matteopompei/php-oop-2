@@ -7,11 +7,13 @@
   <title>php-oop-2</title>
 </head>
 <body>
+
+
 <?php
   require_once __DIR__."./classes/Film.php";
   require_once __DIR__."./classes/Sala.php";
   require_once __DIR__."./classes/Sala4D.php";
-  require_once __DIR__."./classes/Spettacoli.php";
+  require_once __DIR__."./classes/Spettacolo.php";
 
   $filmArr = [
     new Film("Pulp Fiction", "Noir, gangster, thriller, commedia, drammatico", "154 minuti", "Un killer si innamora della moglie del suo capo, un pugile rinnega la sua promessa e una coppia tenta una rapina che va rapidamente fuori controllo.", "Quentin Tarantino", "John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis, Tim Roth, Harvey Keitel, Ving Rhames, Amanda Plummer, Christopher Walken"),
@@ -22,21 +24,35 @@
   ];
 
   $saleArr = [
-    new Sala("1", "250"),
-    new Sala("2", "180"),
-    new Sala("3", "100"),
-    new Sala4D("4", "300", true, true, true),
-    new Sala4D("5", "250", true, false, false)
+    new Sala(1, 250),
+    new Sala(2, 180),
+    new Sala(3, 100),
+    // new Sala4D(4, 300, true, true, true),
+    // new Sala4D(5, 250, true, false, false)
   ];
 
   $spettacoliArr = [
-    new Spettacolo($filmArr[0], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[0])
-    new Spettacolo($filmArr[1], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[1])
-    new Spettacolo($filmArr[2], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[2])
-    new Spettacolo($filmArr[3], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[3])
+    new Spettacolo($filmArr[0], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[0]),
+    new Spettacolo($filmArr[1], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[1]),
+    new Spettacolo($filmArr[2], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[2]),
+    new Spettacolo($filmArr[3], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[3]),
     new Spettacolo($filmArr[4], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[4])
-  ]
+  ];
+
+
+
+  foreach ($saleArr as $sala) {
+    echo "Sala {$sala->getinfo()[0]} <br> Capienza {$sala->getinfo()[1]} posti <br><br>";
+  }
+
+
+  echo "<pre>";
+  // var_dump($filmArr);
+  var_dump($saleArr);
+  // var_dump($spettacoliArr);
+  echo "</pre>";
 
 ?>
+
 </body>
 </html>
