@@ -32,11 +32,11 @@
   ];
 
   $spettacoliArr = [
-    new Spettacolo($filmArr[0], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[0]),
-    new Spettacolo($filmArr[1], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[1]),
-    new Spettacolo($filmArr[2], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[2]),
-    new Spettacolo($filmArr[3], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[3]),
-    new Spettacolo($filmArr[4], "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[4])
+    new Spettacolo($filmArr[0]->getTitolo(), "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[0]->getInfo()[0]),
+    new Spettacolo($filmArr[1]->getTitolo(), "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[1]->getInfo()[0]),
+    new Spettacolo($filmArr[2]->getTitolo(), "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[2]->getInfo()[0]),
+    new Spettacolo($filmArr[3]->getTitolo(), "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[3]->getInfo()[0]),
+    new Spettacolo($filmArr[4]->getTitolo(), "15 marzo 2022", "16:00, 19:00, 21:00", $saleArr[4]->getInfo()[0])
   ];
 
 
@@ -44,13 +44,13 @@
   // Milestone 1
 
   foreach ($saleArr as $sala) {
-    echo "Sala {$sala->getinfo()[0]} <br> Capienza {$sala->getinfo()[1]} posti <br>";
-    if($sala->getinfo()[2]) {
+    echo "Sala {$sala->getInfo()[0]} <br> Capienza {$sala->getInfo()[1]} posti <br>";
+    if($sala->getInfo()[2]) {
       echo "Interazioni immersive: vibrazione";
-      if($sala->getinfo()[3]) {
+      if($sala->getInfo()[3]) {
         echo ", fumo";
       }
-      if($sala->getinfo()[4]) {
+      if($sala->getInfo()[4]) {
         echo ", acqua";
       }
       echo "<br>";
@@ -60,10 +60,16 @@
 
   // Milestone 2
   foreach ($saleArr as $capienza) {
-    $totCapienza += $capienza->getinfo()[1];
+    $totCapienza += $capienza->getInfo()[1];
   }
-  echo "La capienza totale del cinema è di ".$totCapienza." posti.";
+  echo "La capienza totale del cinema è di ".$totCapienza." posti. <br><br>";
 
+  // Milestone 3
+  $proiezioni = explode(',', $spettacoliArr[0]->getOrari());
+  for ($i=0; $i < count($proiezioni); $i++) { 
+    $proiezioniTot = $i + 1;
+  }
+  echo "{$filmArr[0]->getTitolo()} verrà proiettato il giorno {$spettacoliArr[0]->getData()} per {$proiezioniTot} volte.";
   
 
   echo "<pre>";

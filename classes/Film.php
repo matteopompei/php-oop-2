@@ -16,4 +16,8 @@
       $this->regista = $_regista;
       $this->cast = $_cast;
     }
+
+    public function getTitolo() {
+      return $this->titolo;
+    }
   }

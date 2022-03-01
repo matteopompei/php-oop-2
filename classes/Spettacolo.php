@@ -12,4 +12,12 @@
       $this->orari = $_orari;
       $this->sala = $_sala;
     }
+
+    public function getData() {
+      return $this->date;
+    }
+
+    public function getOrari() {
+      return $this->orari;
+    }
   }
