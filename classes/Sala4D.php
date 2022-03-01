@@ -11,4 +11,14 @@
       $this->fumo = $_fumo;
       $this->acqua = $_acqua;
     }
+
+    public function getInfo() {
+      return [
+        $this->id,
+        $this->capienza,
+        $this->vibrazione,
+        $this->fumo,
+        $this->acqua
+      ];
+    }
   }

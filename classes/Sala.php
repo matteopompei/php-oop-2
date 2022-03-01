@@ -10,6 +10,9 @@
     }
 
     public function getInfo() {
-      return "{$this->id} {$this->capienza}";
+      return [
+        $this->id,
+        $this->capienza
+      ];
     }
   }

@@ -27,8 +27,8 @@
     new Sala(1, 250),
     new Sala(2, 180),
     new Sala(3, 100),
-    // new Sala4D(4, 300, true, true, true),
-    // new Sala4D(5, 250, true, false, false)
+    new Sala4D(4, 300, true, true, true),
+    new Sala4D(5, 250, true, false, false)
   ];
 
   $spettacoliArr = [
@@ -42,13 +42,25 @@
 
 
   foreach ($saleArr as $sala) {
-    echo "Sala {$sala->getinfo()[0]} <br> Capienza {$sala->getinfo()[1]} posti <br><br>";
+    echo "Sala {$sala->getinfo()[0]} <br> Capienza {$sala->getinfo()[1]} posti <br>";
+    if($sala->getinfo()[2]) {
+      echo "Interazioni immersive: vibrazione";
+      if($sala->getinfo()[3]) {
+        echo ", fumo";
+      }
+      if($sala->getinfo()[4]) {
+        echo ", acqua";
+      }
+      echo "<br>";
+    }
+    echo "<br>";
   }
 
+  
 
   echo "<pre>";
   // var_dump($filmArr);
-  var_dump($saleArr);
+  // var_dump($saleArr);
   // var_dump($spettacoliArr);
   echo "</pre>";
 
